@@ -4,7 +4,7 @@
 A simple WebApp of todo-list.
 On this WebApp you can add new items to list, remove them, mark as Done, 
 and reset the list.
-i made it to practice NodeJS, EJS & Express. 
+It was made to practice NodeJS & EJS. 
 
 ## Developed with
 * HTML
