@@ -8,16 +8,15 @@ i made it to practice NodeJS, EJS & Express.
 
 ## Developed with
 * HTML
-* CSS (Indcluding Bootstrap 5.0)
+* CSS (Using Bootstrap 5.0)
 * JS (Using NodeJS, EJS, EXPRESS, BODY-PARSER etc..)
 
 ## Screenshots
-![image](https://user-images.githubusercontent.com/44448238/125161310-438d4400-e18a-11eb-98f3-ab2750e2b4c0.png)
+
+<img src="https://user-images.githubusercontent.com/44448238/125161310-438d4400-e18a-11eb-98f3-ab2750e2b4c0.png" width=400px height=300px>
+
+<img src="https://user-images.githubusercontent.com/44448238/125161331-64ee3000-e18a-11eb-9a0e-d4a28158f854.png" width=400px height=300px>
 
 
-![image](https://user-images.githubusercontent.com/44448238/125161331-64ee3000-e18a-11eb-9a0e-d4a28158f854.png)
-
-
-![image](https://user-images.githubusercontent.com/44448238/125161338-6fa8c500-e18a-11eb-8f59-be384e4cc671.png)
-
+<img src="https://user-images.githubusercontent.com/44448238/125161338-6fa8c500-e18a-11eb-8f59-be384e4cc671.png" width=400px height=300px>
 
