@@ -8,8 +8,8 @@ It was made to practice NodeJS & EJS.
 
 ## Developed with
 * HTML
-* CSS (Using Bootstrap 5.0)
-* JS (Using NodeJS, EJS, EXPRESS, BODY-PARSER etc..)
+* CSS (Using Bootstrap Library)
+* JS (Using NodeJS, EJS.)
 
 ## Screenshots
 
