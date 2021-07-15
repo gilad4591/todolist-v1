@@ -1,56 +1,73 @@
 <%- include ('header') -%>
 
-  <div class="btn-group" role="group" aria-label="Basic example">
-    <form class="form" action="/" method="post">
-      <button class="btn button-reset" type="submit" name="reset" value="reset">Reset</button>
-      <button type="button" class="btn button-reset btn-info-pos" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-        Info
-      </button> 
+<nav class="conatiner">
+<div class="btn-group">
+  <form class="form buttons" action="/reset" method="post">
+    <button class="btn button-reset" type="submit" name="reset" value="reset">Reset</button>
+    <button type="button" class="btn button-reset btn-info-pos" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+      Info
+    </button>
+    <input type="hidden" name="listName" value="<%=listTitle%>"></input>
+    <select class="select-list btn" onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);">
+      <option value="">Select exists list</option>
+      <%lists.forEach(function(list){%>
+      <option class="option-text" value=<%=list.name%>> <%=list.name%> </option>
+      <% }) %>
+    </select>
+  </form>
 </div>
+<form action="/remove" method="post">
+  <button class="btn button-reset home-btn" type="submit" name="button">Home</button>
+<% if (listTitle != "Default") { %>
+    <button class="btn button-reset" type="submit" name="remove" value="<%=listTitle%>">Remove List</button>
+    <%}%>
+  </form>
+</nav>
 
 
-  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static"  tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="staticBackdropLabel">ToDo Info</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <p>Hello and welcome to "ToDo list".</p>
-          <p>This is my first webapp using nodejs.</p>
-          <p>
-            You can add tasks, check it while its done and remove it if you added them accidently.
-            </p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        </div>
+
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">ToDo Info</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Hello and welcome to "ToDo list".</p>
+        <p>This is my first webapp using nodejs.</p>
+        <p>
+          You can add tasks, check it and remove it while its done.
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
+</div>
 
-  <div class="box" id="heading">
-    <h1><%=dayType%></h1>
-  </div>
-  <div class="box">
 
-    <% for (var i=0; i<newListItems.length; i++) { %>
+
+<div class="box" id="heading">
+  <h1><%=listTitle%></h1>
+</div>
+<div class="box">
+  <%newListItems.forEach(function(item){%>
+  <form action="/delete" method="post">
     <div class="item">
-      <input type="checkbox">
-      <p>
-        <%=newListItems[i]%></p>
-      <form action="/" method="post">
-        <button class="remove-item" type="submit" name="remove" value="<%=i%>">X</button>
-      </form>
+      <input type="checkbox" name="checkbox" value="<%=item._id%>" onchange="this.form.submit()">
+      <p><%=item.name%></p>
+    </div>
+    <input type="hidden" name="listName" value="<%=listTitle%>"></input>
+  </form>
+  <%})%>
 
-    </div>
-    <%}%>
-      <form class="item" action="/" method="post">
-        <input type="text" name="item" placeholder="New Item" autocomplete="off" autofocus="on">
-        <button class="button-plus" type="submit" name="submit">+</button>
-      </form>
-    </div>
+  <form class="item" action="/" method="post">
+    <input type="text" name="item" placeholder="New Item" autocomplete="off" autofocus="on">
+    <button class="button-plus" type="submit" name="list" value="<%=listTitle%>">+</button>
+  </form>
+</div>
 
 </body>
 
