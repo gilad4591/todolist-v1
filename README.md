@@ -2,7 +2,9 @@
 
 ## Description
 A simple WebApp of todo-list.
-It was made to practice NodeJS & EJS. 
+It was made to practice NodeJS & EJS. <BR>
+I stored it on heroku & MongoDB
+https://damp-harbor-82014.herokuapp.com/
 
 ## Features
 * Create a new list.
@@ -15,6 +17,7 @@ It was made to practice NodeJS & EJS.
 * HTML
 * CSS (Using Bootstrap Library)
 * JS (Using NodeJS, EJS.)
+* MongoDB
 
 ## Screenshots
 ## Home page - default list
